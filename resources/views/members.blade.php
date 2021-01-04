@@ -9,7 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="p-5">
-                    Members area
+                    <h3 class="mb-4 font-bold">Members area</h3>
+                    <p>You can find some special membership information here.</p>
                 </div>
             </div>
         </div>

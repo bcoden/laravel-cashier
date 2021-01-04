@@ -9,31 +9,15 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="p-5">
-                    <form action="{{ route('charge.post') }}" method="post" id="payment-form">
-                        @csrf
-                        <div class="mt-4">
-                            <p>Name and price of chargeable item</p>
-                        </div>
-                        <div class="w-1/2   form-row">
-                            <label for="cardHolder-name">Card Holders Name</label>
-                            <div>
-                                <input type="text" id="cardholder-name" name="cardholder-name" class="px-2 border">
-                            </div>
-                            <label for="card-element">
-                                Credit or debit card
-                            </label>
-                            <div id="card-element">
-                                <!-- A Stripe Element will be inserted here. -->
-                            </div>
-
-                            <!-- Used to display form errors. -->
-                            <div id="card-errors" role="alert"></div>
-                        </div>
-
-                        <x-jet-button class="mt-4">
-                            Purchase Now
-                        </x-jet-button>
-                    </form>
+                    @include('forms.payment', [
+                        'action' => route('charge.post'),
+                        'product' => [
+                            'title' => 'Really great item',
+                            'description' => 'You really want this item',
+                            'price' => 10.00
+                        ],
+                        'action_text' => 'Purchase Now'
+                    ])
                 </div>
             </div>
         </div>
